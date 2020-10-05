@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.main.MainActivity">
+
+    <data>
+
+        <variable
+            name="main"
+            type="com.munki.android_kotlin_mvvm_fastscroll.ui.main.MainViewModel" />
+    </data>
+
+    <!-- Parent Layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Word Recyclerview -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_word"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:setWordListAdapter="@{main.adapter}"
+            app:setWordListItem="@{main.wordList}"
+            tools:listitem="@layout/item_recyclerview" />
+
+        <!-- FastScroll -->
+        <com.munki.android_kotlin_mvvm_fastscroll.ui.custom.RecyclerFastScroller
+            android:id="@+id/fast_scroll_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="15dp"
+
+            app:handleBackgroundColor="@android:color/darker_gray"
+            app:handleRadius="45"
+            app:handleMargin="0"
+            app:handleWidth="20"
+
+            app:layout_constraintBottom_toBottomOf="@id/rv_word"
+            app:layout_constraintTop_toTopOf="@id/rv_word"
+            app:layout_constraintStart_toStartOf="@id/rv_word"
+            app:layout_constraintEnd_toEndOf="@id/rv_word"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

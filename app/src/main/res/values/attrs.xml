@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- XML option Attrs - FastScrollSection -->
+    <declare-styleable name="FastScrollSection">
+        <attr name="handleBackgroundColor" format="color" />
+        <attr name="handleTextColor" format="color" />
+        <attr name="handleRadius" format="float" />
+        <attr name="handleWidth" format="integer" />
+        <attr name="handleMargin" format="integer"/>
+    </declare-styleable>
+
+</resources>
